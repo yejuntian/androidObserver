@@ -6,7 +6,7 @@ import java.io.Serializable;
  * Created by tianyejun on 2018/1/13.
  */
 
-public class UserBean implements Serializable {
+public class UserBean implements Serializable ,IBean{
     private int id;
     private String name;
 

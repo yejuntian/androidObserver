@@ -29,7 +29,7 @@ public class UserDao extends BaseDao<UserBean> {
     }
 
     @Override
-    public long insert(Context context, UserBean data) {
+    protected long insert(Context context, UserBean data) {
         SQLiteDatabase database = myDataBaseHelper.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(ID, data.getId());
@@ -38,13 +38,13 @@ public class UserDao extends BaseDao<UserBean> {
     }
 
     @Override
-    public long delete(Context context, UserBean data) {
+    protected long delete(Context context, UserBean data) {
         SQLiteDatabase database = myDataBaseHelper.getWritableDatabase();
         return database.delete(TABLE_NAME, new String("id = ?"), new String[]{data.getId() + ""});
     }
 
     @Override
-    public long update(Context context, UserBean data) {
+    protected long update(Context context, UserBean data) {
         SQLiteDatabase database = myDataBaseHelper.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(ID, data.getId());

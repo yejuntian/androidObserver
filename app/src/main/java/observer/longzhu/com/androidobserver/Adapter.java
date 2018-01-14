@@ -10,6 +10,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
+import observer.longzhu.com.androidobserver.bean.IBean;
 import observer.longzhu.com.androidobserver.bean.UserBean;
 
 /**
@@ -18,14 +19,14 @@ import observer.longzhu.com.androidobserver.bean.UserBean;
 
 public class Adapter extends BaseAdapter {
     private Context context;
-    private List<UserBean> userBeanList = null;
+    private List<IBean> userBeanList = null;
 
     public Adapter(Context context) {
         this.context = context;
         userBeanList = new ArrayList<>();
     }
 
-    public void setData(List<UserBean> list) {
+    public void setData(List<IBean> list) {
         userBeanList.clear();
         userBeanList.addAll(list);
         this.notifyDataSetChanged();
@@ -58,7 +59,7 @@ public class Adapter extends BaseAdapter {
         } else {
             viewHolder = (ViewHolder) convertView.getTag();
         }
-        UserBean userBean = userBeanList.get(position);
+        UserBean userBean = (UserBean) userBeanList.get(position);
         if (userBean != null) {
             viewHolder.mTv.setText(userBean.getName());
         }

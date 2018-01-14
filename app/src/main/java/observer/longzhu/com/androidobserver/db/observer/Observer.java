@@ -1,7 +1,7 @@
-package observer.longzhu.com.androidobserver.observer;
+package observer.longzhu.com.androidobserver.db.observer;
 
 
-import observer.longzhu.com.androidobserver.observerable.Observable;
+import observer.longzhu.com.androidobserver.db.observerbale.Observable;
 
 /**
  * 观察者

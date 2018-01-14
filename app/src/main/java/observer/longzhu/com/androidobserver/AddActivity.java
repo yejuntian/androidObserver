@@ -41,10 +41,10 @@ public class AddActivity extends AppCompatActivity {
 
     public void saveData() {
         UserBean userBean = new UserBean(count++, mContent.getText().toString());
-        userDao.insert(this, userBean);
-        Intent intent = new Intent();
-        intent.putExtra("user", userBean);
-        setResult(500, intent);
+        userDao.templateInsert(this, userBean);
+//        Intent intent = new Intent();
+//        intent.putExtra("user", userBean);
+//        setResult(500, intent);
         finish();
     }
 }

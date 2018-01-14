@@ -1,8 +1,8 @@
-package observer.longzhu.com.androidobserver.observerable;
+package observer.longzhu.com.androidobserver.db.observerbale;
 
 import java.util.ArrayList;
 
-import observer.longzhu.com.androidobserver.observer.Observer;
+import observer.longzhu.com.androidobserver.db.observer.Observer;
 
 /**
  * Created by tianyejun on 2018/1/13.
@@ -44,10 +44,10 @@ public class Observable<T> {
         }
     }
 
-    public void notifyObserver(Observable<T> observable, T data) {
+    public void notifyObserver(T data) {
         synchronized (mObservers) {
             for (Observer<T> observer : mObservers) {
-                observer.update(observable, data);
+                observer.update(this, data);
             }
         }
     }
